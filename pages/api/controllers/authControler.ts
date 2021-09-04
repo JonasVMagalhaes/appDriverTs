@@ -1,6 +1,6 @@
 import { NextApiRequest } from "next";
 
-import loginWithEmailAndPassword from "../services/authService";
+import { loginWithEmailAndPassword } from "../services/authService";
 
 export default async function authController(req: NextApiRequest) {
     switch (req.method) {

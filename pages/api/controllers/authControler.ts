@@ -1,8 +1,10 @@
 import { NextApiRequest } from "next";
 
+import { IResponse } from "../interfaces/responseInterface";
+
 import { loginWithEmailAndPassword } from "../services/authService";
 
-export default async function authController(req: NextApiRequest) {
+export default async function authController(req: NextApiRequest): Promise<IResponse> {
     switch (req.method) {
         case "GET": return await getAuthService(req);
         case "POST": return await postAuthService(req);
@@ -13,23 +15,23 @@ export default async function authController(req: NextApiRequest) {
     }
 }
 
-const getAuthService = async (req: NextApiRequest) => {
-    return "Teste Get";
+const getAuthService = async (req: NextApiRequest): Promise<IResponse> => {
+    return { status: 200, response: "Teste Get" };
 }
 
-const postAuthService = async (req: NextApiRequest) => {
+const postAuthService = async (req: NextApiRequest): Promise<IResponse> => {
     const { email, password } = req.body;
     return await loginWithEmailAndPassword(email, password);
 }
 
-const putAuthService = async (req: NextApiRequest) => {
-    return "Teste Put";
+const putAuthService = async (req: NextApiRequest): Promise<IResponse> => {
+    return { status: 200, response: "Teste Put" };
 }
 
-const deleteAuthService = async (req: NextApiRequest) => {
-    return "Teste Delete";
+const deleteAuthService = async (req: NextApiRequest): Promise<IResponse> => {
+    return { status: 200, response: "Teste Delete" };
 }
 
-const notMethodFinded = async (req: NextApiRequest) => {
-    return `Method ${req.method} not found.`;
+const notMethodFinded = async (req: NextApiRequest): Promise<IResponse> => {
+    return { status: 200, response: `Method ${req.method} is not valid` };
 }

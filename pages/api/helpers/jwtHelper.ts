@@ -1,5 +1,6 @@
-const jwt = require('jsonwebtoken');
+import jwt from 'jsonwebtoken';
 
 export function generatePasswordJWT(password: string): string {
-    return jwt.sign({ foo: password }, process.env.HASH_JWT);
+    const keyJWT: any = process.env.keyHashJwt;
+    return jwt.sign({ foo: password }, keyJWT);
 }

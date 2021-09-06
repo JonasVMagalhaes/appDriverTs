@@ -1,1 +1,2 @@
 export const AUTHENTICATE_VALUE = 'AUTHENTICATE_VALUE';
+export const USER_VALUE = "USER_VALUE";

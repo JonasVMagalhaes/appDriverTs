@@ -1,4 +1,4 @@
-export default interface LoginProps {
+export default interface ILoginProps {
     dispatch: any,
     isAuthenticated: any
 }

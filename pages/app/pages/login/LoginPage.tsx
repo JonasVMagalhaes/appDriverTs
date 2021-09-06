@@ -5,12 +5,12 @@ import { connect } from 'react-redux';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 
-import PropsLogin from '../../interfaces/PropsLogin';
+import IPropsLogin from '../../interfaces/IPropsLogin';
 import IFunctionLogin from '../../interfaces/IFunctionLogin';
 
 import avatarImg from '../../assets/img/avatar.png';
 
-const LoginPage = ({ isAuthenticated }: PropsLogin) => {
+const LoginPage = ({ isAuthenticated }: IPropsLogin) => {
 
     const login = ({ email, password }: IFunctionLogin) => {
         console.log(isAuthenticated);

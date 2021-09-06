@@ -1,4 +1,4 @@
-export default interface PropsButton {
+export default interface IPropsButton {
     callBackFunction: any,
     textBtn: string
 }

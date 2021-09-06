@@ -2,22 +2,34 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { connect } from 'react-redux';
 
+import { setAuthenticate } from '../../actions';
+
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 
 import IPropsLogin from '../../interfaces/IPropsLogin';
-import IFunctionLogin from '../../interfaces/IFunctionLogin';
 
 import avatarImg from '../../assets/img/avatar.png';
 
-const LoginPage = ({ isAuthenticated }: IPropsLogin) => {
-
-    const login = ({ email, password }: IFunctionLogin) => {
-        console.log(isAuthenticated);
-    }
+const LoginPage = (props: IPropsLogin) => {
+    const { isAuthenticated } = props;
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    const login = () => {
+        const users: any = [
+            { email: "jonas@2cl.com", password: "123" },
+            { email: "carlos@2cl.com", password: "124" }
+        ]
+
+        const isLogged = users.filter((user: any) => user.email === email && user.password === password);
+        const isAuthenticated = isLogged.length > 0;
+
+        console.log(isAuthenticated);
+
+        props.dispatch(setAuthenticate(isAuthenticated));
+    }
 
     return (
         <div className="bg-blue-400 grid h-screen place-items-center">

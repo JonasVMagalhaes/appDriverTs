@@ -1,15 +1,8 @@
 import React from "react";
 
-interface InputProps {
-    id: string,
-    label: string,
-    type: string,
-    placeholder?: string,
-    value: string,
-    callBackValue: any
-}
+import PropsInput from "../interfaces/PropsInput";
 
-export default function Input({ id, label, type, placeholder, value, callBackValue }: InputProps): any {
+export default function Input({ id, label, type, placeholder, value, callBackValue }: PropsInput): any {
     return (
         <>
             <label className="block text-grey-darker text-sm font-bold mb-2" htmlFor={id}>

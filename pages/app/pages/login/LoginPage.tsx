@@ -1,14 +1,19 @@
 import Image from 'next/image';
 import { useState } from 'react';
+import { connect } from 'react-redux';
 
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 
+import PropsLogin from '../../interfaces/PropsLogin';
+import IFunctionLogin from '../../interfaces/IFunctionLogin';
+
 import avatarImg from '../../assets/img/avatar.png';
 
-export default function LoginPage() {
-    const login = () => {
-        console.log({ email, password });
+const LoginPage = ({ isAuthenticated }: PropsLogin) => {
+
+    const login = ({ email, password }: IFunctionLogin) => {
+        console.log(isAuthenticated);
     }
 
     const [email, setEmail] = useState("");
@@ -17,6 +22,8 @@ export default function LoginPage() {
     return (
         <div className="bg-blue-400 grid h-screen place-items-center">
             <h1 className="font-serif mb-16 text-3xl text-blue-900 text-center">Nome da aplicação</h1>
+
+            <h2>{isAuthenticated}</h2>
 
             <div className="bg-white flex flex-col relative rounded shadow-m px-8 pt-6 pb-8 mb-4">
                 <div className="absolute flex items-center justify-center right-0 -top-11 w-full">
@@ -34,7 +41,7 @@ export default function LoginPage() {
                         Sign In
                     </button>
                     <a className="inline-block align-baseline font-bold text-sm text-blue hover:text-blue-darker" href="#">
-                        Esqueceu sua senha?
+                        Esqueceu sua senha??
                     </a>
                 </div>
 
@@ -43,3 +50,9 @@ export default function LoginPage() {
         </div>
     )
 }
+
+const mapStateToProps = (store: any) => ({
+    isAuthenticated: store.authState.isAuthenticated
+});
+
+export default connect(mapStateToProps)(LoginPage);

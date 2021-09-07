@@ -1,6 +1,6 @@
 import React from "react";
 
-import IPropsInput from "../interfaces/IPropsInput";
+import IPropsInput from "../../data/@types/IPropsInput";
 
 export default function Input(props: IPropsInput): any {
     const { id, label, type, placeholder, value, callBackValue } = props;

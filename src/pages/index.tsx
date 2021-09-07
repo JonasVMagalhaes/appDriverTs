@@ -1,14 +1,14 @@
 import type { NextPage } from 'next';
 import { Provider } from 'react-redux';
 
-import { Store } from './app/store';
+import { Store } from '../data/store';
 
-import LoginPage from "./app/pages/login";
+import Login from './Login';
 
 const Home: NextPage = () => {
   return (
     <Provider store={Store}>
-      <LoginPage />
+      <Login />
     </Provider>
   )
 }

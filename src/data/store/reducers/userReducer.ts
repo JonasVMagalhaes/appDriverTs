@@ -1,7 +1,11 @@
 import { USER_VALUE } from '../actions/actionTypes';
 
-const initialState = {
-    user: "Aqui recebe os dados do User"
+import IReducerUser from '../../@types/IReducerUser';
+
+const initialState: IReducerUser = {
+    id: "",
+    nome: "",
+    email: "",
 };
 
 export const UserReducer = (state = initialState, action: any) => {

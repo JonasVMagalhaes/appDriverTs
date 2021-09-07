@@ -1,8 +1,8 @@
 import React from "react";
 
-import IPropsButton from "../interfaces/IPropsButton";
+import IPropsButton from "../../data/@types/IPropsButton";
 
-export default function LoginPage(props: IPropsButton): any {
+export default function Button(props: IPropsButton): any {
     const { callBackFunction, textBtn } = props;
 
     return (

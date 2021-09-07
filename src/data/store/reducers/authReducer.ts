@@ -1,7 +1,9 @@
 import { AUTHENTICATE_VALUE } from '../actions/actionTypes';
 
-const initialState = {
-    isAuthenticated: "Aqui recebe se está logado ou não"
+import IReducerAuth from '../../@types/IReducerAuth';
+
+const initialState: IReducerAuth = {
+    isAuthenticated: false
 };
 
 export const AuthReducer = (state = initialState, action: any) => {

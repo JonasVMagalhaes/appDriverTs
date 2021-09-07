@@ -2,16 +2,16 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { connect } from 'react-redux';
 
-import { setAuthenticate } from '../../actions';
+import { setAuthenticate } from '../data/store/actions';
 
-import Button from '../../components/Button';
-import Input from '../../components/Input';
+import Button from '../ui/components/Button';
+import Input from '../ui/components/Input';
 
-import IPropsLogin from '../../interfaces/IPropsLogin';
+import IPropsLogin from '../data/@types/IPropsLogin';
 
-import avatarImg from '../../assets/img/avatar.png';
+import avatarImg from '../../public/img/avatar.png';
 
-const LoginPage = (props: IPropsLogin) => {
+const Login = (props: IPropsLogin) => {
     const { isAuthenticated } = props;
 
     const [email, setEmail] = useState("");
@@ -25,8 +25,6 @@ const LoginPage = (props: IPropsLogin) => {
 
         const isLogged = users.filter((user: any) => user.email === email && user.password === password);
         const isAuthenticated = isLogged.length > 0;
-
-        console.log(isAuthenticated);
 
         props.dispatch(setAuthenticate(isAuthenticated));
     }
@@ -67,4 +65,4 @@ const mapStateToProps = (store: any) => ({
     isAuthenticated: store.authState.isAuthenticated
 });
 
-export default connect(mapStateToProps)(LoginPage);
+export default connect(mapStateToProps)(Login);

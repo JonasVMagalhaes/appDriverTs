@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
-import Button from '../../components/Button';
-import Input from '../../components/Input';
+import Button from '../ui/components/Button';
+import Input from '../ui/components/Input';
 
-export default function RegisterPage() {
+export default function Register() {
     const login = () => {
         console.log({ email, password });
     }

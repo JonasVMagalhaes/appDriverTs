@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-import Button from '../ui/components/Button';
-import Input from '../ui/components/Input';
+import Button from '@components/Button';
+import Input from '@components/Input';
 
 export default function Register() {
     const login = () => {

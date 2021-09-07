@@ -4,12 +4,12 @@ import { connect } from 'react-redux';
 
 import { setAuthenticate } from '../data/store/actions';
 
-import Button from '../ui/components/Button';
-import Input from '../ui/components/Input';
+import Button from '@components/Button';
+import Input from '@components/Input';
 
-import IPropsLogin from '../data/@types/IPropsLogin';
+import avatarImg from '@images/avatar.png';
 
-import avatarImg from '../../public/img/avatar.png';
+import IPropsLogin from '@types/IPropsLogin';
 
 const Login = (props: IPropsLogin) => {
     const { isAuthenticated } = props;
@@ -31,7 +31,7 @@ const Login = (props: IPropsLogin) => {
 
     return (
         <div className="bg-blue-400 grid h-screen place-items-center">
-            <h1 className="font-serif mb-16 text-3xl text-blue-900 text-center">Nome da aplicação</h1>
+            <h1 className="font-serif mb-16 text-3xl text-blue-900 text-center">Nome de aplicação</h1>
 
             <h2>{isAuthenticated}</h2>
 

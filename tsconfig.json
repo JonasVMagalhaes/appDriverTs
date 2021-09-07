@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
+    "baseUrl": ".",
     "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -15,8 +15,11 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "paths": {
-      "@styles/*": ["ui/styles/*"],
-      "@components/*": ["ui/components/*"],
+      "@components/*": ["src/ui/components/*"],
+      "@fonts/*": ["public/fonts"],
+      "@images/*": ["public/img/*"],
+      "@styles/*": ["src/ui/styles/*"],
+      "@types/*": ["src/data/@types/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/app/storeConfig"],

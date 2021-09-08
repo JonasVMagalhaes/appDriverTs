@@ -9,13 +9,12 @@ import Input from '@components/Input';
 
 import avatarImg from '@images/avatar.png';
 
-import IPropsLogin from 'src/data/types/IPropsLogin';
+import IPropsLogin from '@types/IPropsLogin';
 
-const Login = (props: IPropsLogin) => {
-    const { isAuthenticated } = props;
-
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+const Login = (props: IPropsLogin) => {    
+    const [isAuthenticated, setAuthenticated] = useState<boolean>(props.isAuthenticated);
+    const [email, setEmail] = useState<string>("");
+    const [password, setPassword] = useState<string>("");
 
     const login = (): any => {
         const users: any = [
@@ -23,8 +22,8 @@ const Login = (props: IPropsLogin) => {
             { email: "carlos@2cl.com", password: "124" }
         ]
 
-        const isLogged = users.filter((user: any) => user.email === email && user.password === password);
-        const isAuthenticated = isLogged.length > 0;
+        const isLogged: any[] = users.filter((user: any) => user.email === email && user.password === password);
+        setAuthenticated(isLogged.length > 0);
 
         props.dispatch(setAuthenticate(isAuthenticated));
     }

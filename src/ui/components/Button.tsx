@@ -1,8 +1,8 @@
 import React from "react";
 
-import IPropsButton from "@types/IPropsButton";
+import IPropsButton from "src/data/types/IPropsButton";
 
-export default function Button(props: IPropsButton): any {
+const Button = (props: IPropsButton): any => {
     const { callBackFunction, textBtn } = props;
 
     return (
@@ -13,3 +13,5 @@ export default function Button(props: IPropsButton): any {
         </div>
     )
 }
+
+export default Button;

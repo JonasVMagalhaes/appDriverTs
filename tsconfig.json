@@ -19,7 +19,7 @@
       "@fonts/*": ["public/fonts"],
       "@images/*": ["public/img/*"],
       "@styles/*": ["src/ui/styles/*"],
-      "@types/*": ["src/data/@types/*"]
+      "@types/*": ["src/data/types/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/app/storeConfig"],

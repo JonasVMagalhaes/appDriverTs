@@ -1,6 +1,6 @@
 import { USER_VALUE } from '../actions/actionTypes';
 
-import IReducerUser from '../../@types/IReducerUser';
+import IReducerUser from '../../types/IReducerUser';
 
 const initialState: IReducerUser = {
     id: "",

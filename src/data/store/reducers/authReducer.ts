@@ -1,6 +1,6 @@
 import { AUTHENTICATE_VALUE } from '../actions/actionTypes';
 
-import IReducerAuth from '../../@types/IReducerAuth';
+import IReducerAuth from '../../types/IReducerAuth';
 
 const initialState: IReducerAuth = {
     isAuthenticated: false

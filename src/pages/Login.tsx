@@ -9,7 +9,7 @@ import Input from '@components/Input';
 
 import avatarImg from '@images/avatar.png';
 
-import IPropsLogin from '@types/IPropsLogin';
+import IPropsLogin from 'src/data/types/IPropsLogin';
 
 const Login = (props: IPropsLogin) => {
     const { isAuthenticated } = props;
@@ -17,7 +17,7 @@ const Login = (props: IPropsLogin) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const login = () => {
+    const login = (): any => {
         const users: any = [
             { email: "jonas@2cl.com", password: "123" },
             { email: "carlos@2cl.com", password: "124" }

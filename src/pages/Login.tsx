@@ -9,7 +9,7 @@ import Input from '@components/Input';
 
 import avatarImg from '@images/avatar.png';
 
-import IPropsLogin from '@types/IPropsLogin';
+import IPropsLogin from '../data/types/IPropsLogin';
 
 const Login = (props: IPropsLogin) => {    
     const [isAuthenticated, setAuthenticated] = useState<boolean>(props.isAuthenticated);
@@ -31,8 +31,6 @@ const Login = (props: IPropsLogin) => {
     return (
         <div className="bg-blue-400 grid h-screen place-items-center">
             <h1 className="font-serif mb-16 text-3xl text-blue-900 text-center">Nome de aplicação</h1>
-
-            <h2>{isAuthenticated}</h2>
 
             <div className="bg-white flex flex-col relative rounded shadow-m px-8 pt-6 pb-8 mb-4">
                 <div className="absolute flex items-center justify-center right-0 -top-11 w-full">
@@ -56,6 +54,8 @@ const Login = (props: IPropsLogin) => {
 
                 <Button textBtn={"Acessar"} callBackFunction={login} />
             </div>
+
+            <p className="absolute bottom-2 right-3 text-gray-700 text-sm">Versão: 0.0.1</p>
         </div>
     )
 }

@@ -1,0 +1,46 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.buble1 {
+  border-radius: 15px;
+  background: cornflowerblue;
+  color: #fff;
+  font-family: arial;
+  position: relative;
+}
+
+.buble2 {
+  border-radius: 15px;
+  background: #00bfb6;
+  color: #fff;
+  font-family: arial;
+  position: relative;
+}
+
+.buble1:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 15px solid cornflowerblue;
+  border-right: 15px solid transparent;
+  border-top: 15px solid cornflowerblue;
+  border-bottom: 15px solid transparent;
+  right: -16px;
+  top: 0px;
+}
+
+.buble2:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 15px solid transparent;
+  border-right: 15px solid #00bfb6;
+  border-top: 15px solid #00bfb6;
+  border-bottom: 15px solid transparent;
+  left: -16px;
+  top: 0px;
+}

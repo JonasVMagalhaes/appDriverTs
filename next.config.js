@@ -10,4 +10,24 @@ module.exports = withPWA({
     register: true,
     skipWaiting: true,
   },
+  async rewrites() {
+    return [
+      {
+        source: '/api/auth',
+        destination: "/api/routes/auth"
+      },
+      {
+        source: '/api/message',
+        destination: "/api/routes/chat/message"
+      },
+      {
+        source: '/api/room',
+        destination: "/api/routes/chat/room"
+      },
+      {
+        source: '/api/user',
+        destination: "/api/routes/user"
+      }
+    ]
+  }
 });

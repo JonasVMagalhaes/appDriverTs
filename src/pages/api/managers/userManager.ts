@@ -1,4 +1,4 @@
-import userSchema from "../models/userModel";
+import userSchema from "../models/userSchema";
 
 import dbConnect from "../utils/dbConnect";
 

@@ -22,7 +22,7 @@ export async function createNewUser(user: IUser): Promise<IResponse> {
 
     const userAdded = await addNewUserInDB(newUser);
 
-    return { status: 200, response: userAdded }
+    return { status: 201, response: userAdded }
 }
 
 const validateProfile = (profile: string): string => {

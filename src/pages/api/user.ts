@@ -1,11 +1,11 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
-import authController from "./controllers/authController";
+import userController from "./controllers/userController";
 
 import { IResponse } from "./interfaces/responseInterface";
 
 const auth = async (req: NextApiRequest, res: NextApiResponse) => {
-  const response: IResponse = await authController(req);
+  const response: IResponse = await userController(req);
   return res.send(response);
 }
 

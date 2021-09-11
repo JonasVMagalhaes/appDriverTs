@@ -22,6 +22,6 @@
       "@types/*": ["src/data/types/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/app/storeConfig"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/app/storeConfig", "public/firebase-messaging-sw.js", "public/push-notification.js"],
   "exclude": ["node_modules"]
 }

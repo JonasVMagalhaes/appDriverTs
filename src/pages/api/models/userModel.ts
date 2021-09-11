@@ -6,10 +6,20 @@ const Schema = new mongoose.Schema({
         require: true,
         unique: true
     },
-    login: {
+    name: {
         type: String,
-        required: [true, "Please add a title"],
+        required: [true, "Please, add a name to your user"],
+        trim: true
+    },
+    email: {
+        type: String,
+        required: [true, "Please add a email to your user"],
         unique: true,
+        trim: true
+    },
+    profile: {
+        type: String,
+        required: [true, "Please, add a profile to your user"],
         trim: true
     },
     md5Password: {

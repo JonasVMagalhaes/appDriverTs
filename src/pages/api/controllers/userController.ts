@@ -2,7 +2,8 @@ import { NextApiRequest } from "next";
 
 import { createNewUser } from "../services/userService";
 
-import { IResponse } from "../interfaces/responseInterface";
+import IResponse from "../interfaces/IResponse";
+import IUser from "../interfaces/IUser";
 
 export default async function userController(req: NextApiRequest): Promise<IResponse> {
     switch (req.method) {
@@ -13,7 +14,8 @@ export default async function userController(req: NextApiRequest): Promise<IResp
 }
 
 const createUser = async (req: NextApiRequest): Promise<IResponse> => {
-    return { status: 200, response: createNewUser() };
+    const user: IUser = req.body;
+    return await createNewUser(user);
 }
 
 const notMethodFinded = async (req: NextApiRequest): Promise<IResponse> => {

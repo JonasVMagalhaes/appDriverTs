@@ -1,6 +1,7 @@
 import { NextApiRequest } from "next";
 
-import { IResponse } from "../interfaces/responseInterface";
+import IAuth from "../interfaces/IAuth";
+import IResponse from "../interfaces/IResponse";
 
 import { loginWithEmailAndPassword } from "../services/authService";
 
@@ -20,8 +21,8 @@ const getAuthService = async (req: NextApiRequest): Promise<IResponse> => {
 }
 
 const postAuthService = async (req: NextApiRequest): Promise<IResponse> => {
-    const { email, password } = req.body;
-    return await loginWithEmailAndPassword(email, password);
+    const credentials: IAuth = req.body;
+    return await loginWithEmailAndPassword(credentials);
 }
 
 const putAuthService = async (req: NextApiRequest): Promise<IResponse> => {

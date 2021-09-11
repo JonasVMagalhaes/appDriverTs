@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 
 import { Store } from '../data/store';
 
-import Login from './Login';
+import Login from './login';
 
 const Home: NextPage = () => {
   return (

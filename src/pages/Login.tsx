@@ -9,7 +9,7 @@ import Input from '@components/Input';
 
 import avatarImg from '@images/avatar.png';
 
-import IPropsLogin from '../data/types/IPropsLogin';
+import IPropsLogin from '@types/IPropsLogin';
 
 const Login = (props: IPropsLogin) => {    
     const [isAuthenticated, setAuthenticated] = useState<boolean>(props.isAuthenticated);

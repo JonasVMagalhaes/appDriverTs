@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import axios from 'axios';
 import { useState } from 'react';
 import { connect } from 'react-redux';
 
@@ -11,21 +12,24 @@ import avatarImg from '@images/avatar.png';
 
 import IPropsLogin from '@types/IPropsLogin';
 
-const Login = (props: IPropsLogin) => {    
+import { saveInLocalStorage } from 'src/data/services/localStorageService';
+
+const Login = (props: IPropsLogin) => {
     const [isAuthenticated, setAuthenticated] = useState<boolean>(props.isAuthenticated);
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
 
-    const login = (): any => {
-        const users: any = [
-            { email: "jonas@2cl.com", password: "123" },
-            { email: "carlos@2cl.com", password: "124" }
-        ]
+    const login = async (): Promise<any> => {
+        const baseUrl: any = process.env.BASE_URL;
+        const response = await axios.post(`${baseUrl}/auth`, {
+            email: "carlos@app.com",
+            password: "123456789"
+        })
 
-        const isLogged: any[] = users.filter((user: any) => user.email === email && user.password === password);
-        setAuthenticated(isLogged.length > 0);
-
-        props.dispatch(setAuthenticate(isAuthenticated));
+        if(response.status === 200) {
+            saveInLocalStorage({key: "authentication", value: response.data.response});
+            props.dispatch(setAuthenticate(isAuthenticated));
+        }
     }
 
     return (

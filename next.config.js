@@ -2,6 +2,7 @@ const withPWA = require("next-pwa");
 
 module.exports = withPWA({
   env: {
+    BASE_URL: "http://localhost:3000/api",
     MONGO_URI: "mongodb+srv://hankoanime:pqwrrvi53ZhhlsZP@projects.egwvl.mongodb.net/Hanko-Anime",
     keyHashJwt: "2CL"
   },

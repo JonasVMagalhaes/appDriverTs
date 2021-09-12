@@ -1,5 +1,7 @@
 export default interface IReducerUser {
-    id: string,
-    nome: string,
-    email: string,
+    user: {
+        id: string,
+        nome: string,
+        email: string
+    }
 }

@@ -3,9 +3,11 @@ import { USER_VALUE } from '../actions/actionTypes';
 import IReducerUser from '../../types/IReducerUser';
 
 const initialState: IReducerUser = {
-    id: "",
-    nome: "",
-    email: "",
+    user: {
+        id: '',
+        nome: '',
+        email: '',
+    },
 };
 
 export const UserReducer = (state = initialState, action: any) => {

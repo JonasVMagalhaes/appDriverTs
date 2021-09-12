@@ -2,12 +2,6 @@ import type { NextPage } from 'next';
 import Image from 'next/image';
 import axios from 'axios';
 import { useState } from 'react';
-import { connect } from 'react-redux';
-
-import {
-    setAuthenticate,
-    setUser
-} from '../data/store/actions';
 
 import Button from '@components/Button';
 import Input from '@components/Input';
@@ -15,7 +9,6 @@ import Toast from '@components/Toast';
 
 import avatarImg from '@images/avatar.png';
 
-import IPropsLogin from './../data/types/IPropsLogin';
 
 import { saveInLocalStorage } from 'src/data/services/localStorageService';
 import {
@@ -36,8 +29,6 @@ const Home: NextPage = (props: any) => {
         if (response.data.status === 200) {
             emitToastSuccess('Usuário logado com sucesso.');
             saveInLocalStorage({ key: "authentication", value: response.data.response });
-            props.dispatch(setUser(response.data.response.user));
-            props.dispatch(setAuthenticate(true));
         }
 
         if (response.data.status !== 200) {
@@ -78,9 +69,4 @@ const Home: NextPage = (props: any) => {
     )
 }
 
-const mapStateToProps = (store: any) => ({
-  isAuthenticated: store.authState.isAuthenticated,
-  user: store.userState.user
-});
-
-export default connect(mapStateToProps)(Home);
+export default Home;

@@ -1,12 +1,6 @@
 import Image from 'next/image';
 import axios from 'axios';
 import { useState } from 'react';
-import { connect } from 'react-redux';
-
-import {
-    setAuthenticate,
-    setUser
-} from '../data/store/actions';
 
 import Button from '@components/Button';
 import Input from '@components/Input';
@@ -35,8 +29,6 @@ const Login = (props: IPropsLogin) => {
         if (response.data.status === 200) {
             emitToastSuccess('Usuário logado com sucesso.');
             saveInLocalStorage({ key: "authentication", value: response.data.response });
-            props.dispatch(setUser(response.data.response.user));
-            props.dispatch(setAuthenticate(true));
         }
 
         if (response.data.status !== 200) {
@@ -77,9 +69,4 @@ const Login = (props: IPropsLogin) => {
     )
 }
 
-const mapStateToProps = (store: any) => ({
-    isAuthenticated: store.authState.isAuthenticated,
-    user: store.userState.user
-});
-
-export default connect(mapStateToProps)(Login);
+export default Login;

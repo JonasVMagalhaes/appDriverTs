@@ -1,10 +1,7 @@
-import { useState } from "react";
-
 import ChatHeader from "@components/ChatHeader";
 import ChatBody from "@components/ChatBody";
 import ChatFooter from "@components/ChatFooter";
 
-import IPropsChatBody from "../data/types/IPropsChatBody";
 import IMessagesChat from "../data/types/IMessagesChat";
 
 const Chat = (): any => {

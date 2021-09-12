@@ -12,7 +12,14 @@ export async function addNewUserInDB(user: IUserSchema): Promise<any> {
 export async function recoveryUserByLoginAndHashPassword(email: string, md5Password: string): Promise<any> {
     dbConnect();
     const response: any = await userSchema.findOne({ email: email, md5Password: md5Password });
-    return response ? response._doc : false;
+
+    
+    return response ? {
+        id: response._doc.id,
+        name: response._doc.name,
+        email: response._doc.email,
+        profile: response._doc.profile,
+    } : false;
 }
 
 export async function updateJWTPasswordUser(email: string, jwtPassword: string): Promise<any> {

@@ -3,32 +3,44 @@ import axios from 'axios';
 import { useState } from 'react';
 import { connect } from 'react-redux';
 
-import { setAuthenticate } from '../data/store/actions';
+import {
+    setAuthenticate,
+    setUser
+} from '../data/store/actions';
 
 import Button from '@components/Button';
 import Input from '@components/Input';
+import Toast from '@components/Toast';
 
 import avatarImg from '@images/avatar.png';
 
 import IPropsLogin from '@types/IPropsLogin';
 
 import { saveInLocalStorage } from 'src/data/services/localStorageService';
+import {
+    emitToastSuccess,
+    emitToastError
+} from 'src/data/services/toastService';
 
 const Login = (props: IPropsLogin) => {
-    const [isAuthenticated, setAuthenticated] = useState<boolean>(props.isAuthenticated);
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
 
     const login = async (): Promise<any> => {
         const baseUrl: any = process.env.BASE_URL;
-        const response = await axios.post(`${baseUrl}/auth`, {
-            email: "carlos@app.com",
-            password: "123456789"
-        })
+        const response = await axios.post(`${baseUrl}/auth`, { email, password })
 
-        if(response.status === 200) {
-            saveInLocalStorage({key: "authentication", value: response.data.response});
-            props.dispatch(setAuthenticate(isAuthenticated));
+        console.log(response);
+
+        if (response.data.status === 200) {
+            emitToastSuccess('Usuário logado com sucesso.');
+            saveInLocalStorage({ key: "authentication", value: response.data.response });
+            props.dispatch(setUser(response.data.response.user));
+            props.dispatch(setAuthenticate(true));
+        }
+
+        if (response.data.status !== 200) {
+            emitToastError(response.data.response);
         }
     }
 
@@ -60,12 +72,14 @@ const Login = (props: IPropsLogin) => {
             </div>
 
             <p className="absolute bottom-2 right-3 text-gray-700 text-sm">Versão: 0.0.1</p>
+            <Toast />
         </div>
     )
 }
 
 const mapStateToProps = (store: any) => ({
-    isAuthenticated: store.authState.isAuthenticated
+    isAuthenticated: store.authState.isAuthenticated,
+    user: store.userState.user
 });
 
 export default connect(mapStateToProps)(Login);

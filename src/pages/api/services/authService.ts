@@ -20,6 +20,6 @@ export async function loginWithEmailAndPassword(credentials: IAuth): Promise<IRe
     const updateJwt: any = await updateJWTPasswordUser(credentials.email, jwtPassword);
     if (updateJwt.modifiedCount === 0) return { status: 400, response: "Ocorreu um erro ao realizar a requisição" };
 
-    return { status: 200, response: jwtPassword }
+    return { status: 200, response: { user, jwtPassword } }
 }
 

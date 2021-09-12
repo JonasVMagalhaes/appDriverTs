@@ -18,6 +18,7 @@
       "@components/*": ["src/ui/components/*"],
       "@fonts/*": ["public/fonts"],
       "@images/*": ["public/img/*"],
+      "@services/*": ["src/data/services/*"],
       "@styles/*": ["src/ui/styles/*"],
       "@types/*": ["src/data/types/*"]
     }

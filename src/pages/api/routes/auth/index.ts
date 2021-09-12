@@ -4,6 +4,8 @@ import authController from "../../controllers/authController";
 
 import IResponse from "../../interfaces/IResponse";
 
+console.log("teste");
+
 const auth = async (req: NextApiRequest, res: NextApiResponse) => {
   const response: IResponse = await authController(req);
   return res.send(response);

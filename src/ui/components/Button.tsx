@@ -1,6 +1,6 @@
 import React from "react";
 
-import IPropsButton from "@types/IPropsButton";
+import IPropsButton from "../../data/types/IPropsButton";
 
 const Button = (props: IPropsButton): any => {
     return (

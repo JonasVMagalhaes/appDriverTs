@@ -1,7 +1,7 @@
 import React from "react";
 import Image from 'next/image';
 
-import IPropsChatHeader from "@types/IPropsChatHeader";
+import IPropsChatHeader from "../../data/types/IPropsChatHeader";
 
 import avatarImg from '@images/avatar.png';
 

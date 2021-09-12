@@ -1,6 +1,6 @@
 import React from "react";
 
-import IPropsChatBody from "@types/IPropsChatBody";
+import IPropsChatBody from "../../data/types/IPropsChatBody";
 
 const ChatBody = (props: IPropsChatBody): any => {
     return (

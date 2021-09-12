@@ -4,8 +4,8 @@ import ChatHeader from "@components/ChatHeader";
 import ChatBody from "@components/ChatBody";
 import ChatFooter from "@components/ChatFooter";
 
-import IPropsChatBody from "@types/IPropsChatBody";
-import IMessagesChat from "@types/IMessagesChat";
+import IPropsChatBody from "../data/types/IPropsChatBody";
+import IMessagesChat from "../data/types/IMessagesChat";
 
 const Chat = (): any => {
     const messages: IMessagesChat[] = [

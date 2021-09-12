@@ -1,5 +1,6 @@
 {
   "name": "Next PWA demo",
+  "gcm_sender_id": "103953800507",
   "short_name": "Mext PWA",
   "icons": [
     {

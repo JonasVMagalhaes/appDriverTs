@@ -14,7 +14,7 @@ import Toast from '@components/Toast';
 
 import avatarImg from '@images/avatar.png';
 
-import IPropsLogin from '@types/IPropsLogin';
+import IPropsLogin from './../data/types/IPropsLogin';
 
 import { saveInLocalStorage } from 'src/data/services/localStorageService';
 import {

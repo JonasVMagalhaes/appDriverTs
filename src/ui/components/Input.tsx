@@ -1,6 +1,6 @@
 import React from "react";
 
-import IPropsInput from "@types/IPropsInput";
+import IPropsInput from "../../data/types/IPropsInput";
 
 const Input = (props: IPropsInput): any => {
     return (

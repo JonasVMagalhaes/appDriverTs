@@ -42,7 +42,6 @@ const Home: NextPage = (props: any) => {
             <div className="bg-purple-900 flex flex-col items-center h-screen justify-between py-6">
                 <h1 className="text-white">Nome do App</h1>
 
-
                 <div className="w-full flex flex-col px-5">
                     <Input id="email" icon="email" label="Email" placeholder="Email" type="email" value={email} callBackValue={setEmail} />
                     <Input id="password" icon="key" label="Password" placeholder="Senha" type="password" value={password} callBackValue={setPassword} />

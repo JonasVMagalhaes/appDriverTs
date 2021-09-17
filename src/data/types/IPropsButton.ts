@@ -1,4 +1,4 @@
 export default interface IPropsButton {
-    callBackFunction: any,
-    textBtn: string
+    callBackFunction: any;
+    textBtn: string;
 }

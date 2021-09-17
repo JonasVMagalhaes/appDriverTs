@@ -1,8 +1,8 @@
 export default interface IPropsInput {
-    id: string,
-    label: string,
-    type: string,
-    placeholder?: string,
-    value: string,
-    callBackValue: any
+    id: string;
+    label: string;
+    type: string;
+    placeholder?: string;
+    value: string;
+    callBackValue: any;
 }

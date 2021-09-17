@@ -1,3 +1,3 @@
 export default interface IReducerAuth {
-    isAuthenticated: any
+    isAuthenticated: any;
 }
